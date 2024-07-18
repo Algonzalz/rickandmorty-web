@@ -1,10 +1,8 @@
 
 // import Link from "next/link";
 
-const links = [
-    { name: "Personajes", href: "characters" },
-    { name: "Episodios", href: "episodes" },
-];
+import { Toaster } from "@/components/ui/toaster"
+import { Radiation  } from "lucide-react";
 
 export default function DashboardLayout({
     children,
@@ -15,15 +13,16 @@ export default function DashboardLayout({
         <div className="flex flex-col items-center justify-center min-h-[100dvh] bg-gradient-to-b from-[#0b1e2d] to-[#1c4b72] px-4 py-12 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-md w-full space-y-8">
                 <div className="flex flex-col items-center">
-                    <h1 className="text-4xl font-bold tracking-tight text-[#9df39f]">Rick and Morty</h1>
+                    
+                <Radiation  className="h-16 w-16 text-emerald-300 " />
+                    <h1 className="text-4xl font-bold tracking-tight text-emerald-300 ">Rick and Morty Web</h1>
                 </div>
-                <div className="bg-[#1c4b72] rounded-lg shadow-lg p-8 space-y-6">
+                <div className="bg-[#ffffff] rounded-lg shadow-lg p-8 space-y-6">
                     <div>
                         {children}
                     </div>
-                    <div>
-                    </div>
                 </div>
+                <Toaster />
             </div>
         </div>
     )
