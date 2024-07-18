@@ -45,7 +45,7 @@ export default function Page() {
 		try {
 			const isLoggedIn = await login(username, password);
 			if(isLoggedIn){
-				router.push('dashboard/home')
+				router.push('dashboard/characters')
 			}else{
 				toast({
 					variant: "destructive",

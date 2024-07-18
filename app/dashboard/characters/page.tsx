@@ -1,39 +1,25 @@
-import { columns } from "./columns";
+import { Character, columns } from "./columns";
+
 import { DataTable } from "./data-table";
 
-// async function  getCharacters() {
 
-//     const response = fetch(`https://rickandmortyapi.com/api/character/1`, {
-//         method: "GET"
-//     });
+async function  getCharacters(): Promise<Character[]> {
 
-//     const { data  = [] }: any = response.json();
+    const response = await fetch('https://rickandmortyapi.com/api/character');
 
-//     const character = data.map( (info: { id: any; name: any; status: any; species: any; type: any; gender: any; }) =>({
-//         id: info.id,
-//         name: info.name,
-//         status: info.status,
-//         species: info.species,
-//         type: info.type,
-//         gender: info.gender,
-//     }))
-//     return character
-// }
+    const data = response.json()
+    return data
+}
 
 export default async function Page() {
 
-    // const character = await getCharacters();
-
-    const data = await fetch('https://rickandmortyapi.com/api/character/1').then((res) =>
-        res.json()
-      )
-
-    console.log(data)
+    const data = await getCharacters();
+    
     return (
-        <div>
+        <>
             <h1>Personajes</h1>
-            {/* <DataTable columns={columns} data={data} /> */}
+            <DataTable columns={columns} data={data} />
             
-        </div>
+        </>
     );
 }

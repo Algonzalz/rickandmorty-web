@@ -4,16 +4,23 @@ import { ColumnDef } from "@tanstack/react-table"
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type Character = {
+
+
+  export interface Character {
     id: number
     name: string
     status: string
     species: string
     type: string
     gender: string
-}
+  }
+  
 
 export const columns: ColumnDef<Character>[] = [
+    {
+        accessorKey: "id",
+        header: "ID",
+    },
     {
         accessorKey: "name",
         header: "Nombre",
