@@ -5,7 +5,8 @@ interface User {
 
 const users: User[] = [
     { username: 'henry', password: 'Caracas01.' },
-    { username: 'tcs', password: 'Caracas02.' },
+    { username: 'admin', password: 'Caracas01.' },
+    { username: 'ronald', password: 'Caracas01.' },
 ];
 
 export const login = (username: string, password: string): Promise<boolean> => {
