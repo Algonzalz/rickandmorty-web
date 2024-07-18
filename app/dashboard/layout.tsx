@@ -1,6 +1,9 @@
 
-import Link from "next/link";
 
+
+
+import { ActiveLink } from "./components/active-link/ActiveLink";
+import { Logout } from "./components/logout/Logout";
 const links = [
     { name: "Personajes", href: "characters" },
     { name: "Episodios", href: "episodes" },
@@ -18,8 +21,11 @@ export default function DashboardLayout({
                     <div className="flex items-center justify-between">
                         <div className="flex items-center justify-start">
 
-                                <h1 className="text-4xl font-bold tracking-tight text-emerald-300 ">Rick and Morty Web</h1>
-                           
+                            <h1 className="text-4xl font-bold tracking-tight text-emerald-300 ">Rick and Morty Web</h1>
+
+                        </div>
+                        <div className="flex items-center">
+                            <Logout></Logout>
                         </div>
                     </div>
                 </div>
@@ -36,12 +42,7 @@ export default function DashboardLayout({
                                 <ul className="space-y-2 pb-2">
                                     {links.map((link) => (
                                         <li key={link.href}>
-                                            <Link
-                                                href={link.href}
-                                                className="text-base capitalize text-emerald-700 font-normal rounded-lg flex items-center p-2 hover:bg-emerald-100 group"
-                                            >
-                                                <span className="ml-3">{link.name}</span>
-                                            </Link>
+                                            <ActiveLink {...link}></ActiveLink>
                                         </li>
                                     ))}
                                 </ul>
@@ -74,6 +75,7 @@ export default function DashboardLayout({
                     </p>
                 </div>
             </div>
+
         </>
     );
 }

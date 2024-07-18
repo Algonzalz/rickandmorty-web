@@ -43,7 +43,7 @@ export function DataTable<TData, TValue>({
 
     const [sorting, setSorting] = useState<SortingState>([]);
     const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-    const [currentStatus, setCurrentStatus] = useState('Todos')
+    // const [currentStatus, setCurrentStatus] = useState('Todos')
 
     const table = useReactTable({
         data,

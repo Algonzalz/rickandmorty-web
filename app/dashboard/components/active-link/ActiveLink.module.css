@@ -1,0 +1,7 @@
+.link{
+    @apply hover:underline hover:bg-emerald-100 transition-all
+}
+
+.active-link{
+    @apply text-emerald-700 bg-emerald-100
+}
