@@ -13,7 +13,7 @@ export default function DashboardLayout({
 }) {
     return (
         <>
-            <nav className="bg-gradient-to-b from-[#0b1e2d] to-[#1c4b72] border-b border-[#1c4b72] fixed z-30 w-full">
+            <nav className="bg-[#0b1e2d] border-b border-[#1c4b72] fixed z-30 w-full">
                 <div className="px-3 py-3 lg:px-5 lg:pl-3">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center justify-start">
